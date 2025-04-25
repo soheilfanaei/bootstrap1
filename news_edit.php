@@ -6,7 +6,7 @@ $imageurl="";
 if(isset( $_GET["id"])){
 
     $id=$_GET["id"];
-    $link=mysqli_connect("localhost","root","","onenewsdb");
+    $link=mysqli_connect("localhost","root","","soheil");
     $result=mysqli_query($link,"SELECT * FROM `news` WHERE `id`=$id");
     mysqli_close($link);
     $row=mysqli_fetch_array($result);

@@ -5,8 +5,8 @@ $name=$_POST["name"];
 $username=$_POST["username"];
 $password=$_POST["password"];
 
-$link=mysqli_connect("localhost","root","","onenewsdb");
-$result=mysqli_query($link,"INSERT INTO `user`(`name`, `username`, `password`) VALUES ('$name','$username','$password');");
+$link=mysqli_connect("localhost","root","","soheil");
+$result=mysqli_query($link,"INSERT INTO `register`(`name`, `username`, `password`) VALUES ('$name','$username','$password');");
 mysqli_close($link);
 
 if($result===true)

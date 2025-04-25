@@ -3,8 +3,9 @@ include("theme-header.php");
 
 // $image=$_POST["image"];
 $image=$_FILES["image"]["name"];
-$title=$_POST["title"];
-$text=$_POST["text"];
+$name=$_POST["name"];
+$ghymat=$_POST["ghymat"];
+$id=$_POST["id"];
 
 $flagSaveOk=true;
 $message="";
@@ -13,37 +14,33 @@ $imageurl="images/".$image;
 
 if(file_exists($imageurl)){
     $flagSaveOk=false;
-    $message+="فایل مشابه در سرور وجود دارد";
 }
 
 $size=getimagesize($_FILES["image"]["tmp_name"]);
 if($size>50000){
 $flagSaveOk=false;
-$message+="اندازه فایل بزرگتر از 5 مگابایت است";
 }
 
 $extention=pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION);
 if($extention!="jpg" && $extention!="png"){
     $flagSaveOk=false;
-    $message+="نوع فایل باید jpg یا png باشد";
 }
 
 $upload=move_uploaded_file($_FILES["image"]["tmp_name"],$imageurl);
 if($upload==false){
     $flagSaveOk=false;
-    $message+="در آپلود فایل مشکل پیش آمد";
-}
+    }
 
 if($flagSaveOk){
-    $link=mysqli_connect("localhost","root","","onenewsdb");
-    $result=mysqli_query($link,"INSERT INTO `news`(`title`, `text`, `imageurl`) VALUES ('$title','$text','$imageurl')");
+    $link=mysqli_connect("localhost","root","","soheil");
+    $result=mysqli_query($link,"INSERT INTO `modireat`(`name`, `images`, `id`,`ghymat`) VALUES ('$name','$images','$id','$ghymat')");
     mysqli_close($link);
     
     if($result===true)
     {
         ?>
         <script>
-            location.replace("news.php");
+            location.replace("news_add.php");
         </script>
         <?php
     }else

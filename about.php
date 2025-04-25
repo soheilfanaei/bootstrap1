@@ -13,14 +13,6 @@ include("theme-header.php");
         </div>
     </section>
 
-    <!-- فوتر -->
-    <footer class="py-4">
-        <div class="container text-center">
-<p>ادرس:نجف آباد فلکه بسیج</p> 
-<p>ساعت کاری8الی20</p>      
-<i class="fab fa-instagram">abzar_alat فضای مجازی</i>
-
-        </div>
 
     </footer>
     </p>

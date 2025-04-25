@@ -13,13 +13,13 @@ if(isset($_SESSION["admin"]) && $_SESSION["admin"]==true){
 <div class="row">
     <p class="col">
         <a href="news_add.php">+</a>
-        لیست اخبار
+       افزودن محصولات
     </p>
 </div>
 
 
 <?php 
-$link=mysqli_connect("localhost","root","","onenewsdb");
+$link=mysqli_connect("localhost","root","","soheil");
 $result=mysqli_query($link,"SELECT * FROM `news`");
 mysqli_close($link);
 

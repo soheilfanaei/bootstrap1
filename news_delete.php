@@ -4,7 +4,7 @@ include("theme-header.php");
 $id=$_GET["id"];
 $fileurl="";
 
-$link=mysqli_connect("localhost","root","","onenewsdb");
+$link=mysqli_connect("localhost","root","","soheil");
 $result=mysqli_query($link,"SELECT * FROM `news` WHERE id=$id");
 mysqli_close($link);
 $row=mysqli_fetch_array($result);
@@ -14,7 +14,7 @@ if($row){
 
 $delete=unlink($fileurl);
 if($delete==true){
-    $link=mysqli_connect("localhost","root","","onenewsdb");
+    $link=mysqli_connect("localhost","root","","soheil");
     $result=mysqli_query($link,"DELETE FROM `news` WHERE id=$id");
     mysqli_close($link);
     
