@@ -3,8 +3,8 @@ include("theme-header.php");
 
 $username=$_POST["username"];
 $password=$_POST["password"];
+include("connect.php");
 
-$link=mysqli_connect("localhost","root","","soheil");
 $result=mysqli_query($link,"SELECT * FROM `register` WHERE `username`='$username' and `password`='$password'");
 mysqli_close($link);
 $row=mysqli_fetch_array($result);

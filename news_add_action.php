@@ -32,7 +32,7 @@ if($upload==false){
     }
 
 if($flagSaveOk){
-    $link=mysqli_connect("localhost","root","","soheil");
+    include("connect.php");
     $result=mysqli_query($link,"INSERT INTO `modireat`(`name`, `images`, `id`,`ghymat`) VALUES ('$name','$images','$id','$ghymat')");
     mysqli_close($link);
     

@@ -8,7 +8,7 @@ $ghymat=$_POST["ghymat"];
 $number=$_POST["number"];
 $address=$_POST["address"];
 $Emeil=$_POST["Emeil"];
-$a=mysqli_connect("localhost","root","","soheil");
+include("connect.php");
 $b=mysqli_query($a,"INSERT INTO `sellform`(`name`, `ghymat`,`number`,`address`,`Emeil`,`code_mahsol`) VALUES ('$name','$ghymat','$number','$address','$Emeil','$code_mahsol')");
 mysqli_close($a);
 ?>

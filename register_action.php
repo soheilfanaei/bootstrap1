@@ -5,7 +5,7 @@ $name=$_POST["name"];
 $username=$_POST["username"];
 $password=$_POST["password"];
 
-$link=mysqli_connect("localhost","root","","soheil");
+include("connect.php");
 $result=mysqli_query($link,"INSERT INTO `register`(`name`, `username`, `password`) VALUES ('$name','$username','$password');");
 mysqli_close($link);
 

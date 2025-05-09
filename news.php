@@ -19,7 +19,7 @@ if(isset($_SESSION["admin"]) && $_SESSION["admin"]==true){
 
 
 <?php 
-$link=mysqli_connect("localhost","root","","soheil");
+include("connect.php");
 $result=mysqli_query($link,"SELECT * FROM `news`");
 mysqli_close($link);
 
